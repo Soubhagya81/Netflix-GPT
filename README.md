@@ -9,3 +9,9 @@
 4. Setup Firebase in my application
 
 5. Create login page and authenticate using firebase
+
+6. Deployed our app to production
+
+7. Create Signup user account
+
+8. Implement Sign In user Api
