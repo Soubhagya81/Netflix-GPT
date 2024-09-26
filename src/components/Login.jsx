@@ -1,11 +1,9 @@
 import React, { useRef, useState } from "react";
 import Header from "./Header";
 import { validationForm } from "../utils/validateForm";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../utils/firebase";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const [isSignIn, setIsSignIn] = useState(true);
@@ -14,6 +12,7 @@ const Login = () => {
   const email = useRef(null);
   const password = useRef(null);
   const name = useRef(null);
+  const navigate = useNavigate();
 
   const handelSubmitbutton = function () {
     console.log(email.current.value);
@@ -33,7 +32,7 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          // Signed up
+          setIsSignIn(false)
           const user = userCredential.user;
           console.log(user);
         })
@@ -49,7 +48,7 @@ const Login = () => {
         password.current.value
       )
         .then((userCredential) => {
-          // Signed in
+          navigate('/browser')
           const user = userCredential.user;
           console.log(user);
         })
@@ -62,8 +61,8 @@ const Login = () => {
   };
 
   const signInToggle = () => {
-    isSignIn ? setIsSignIn(!isSignIn) : setIsSignIn(isSignIn);
-    console.log(!isSignIn);
+    isSignIn ? setIsSignIn(!isSignIn) : setIsSignIn(true);
+    console.log(isSignIn);
   };
 
   return (
