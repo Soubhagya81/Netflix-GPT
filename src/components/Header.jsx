@@ -52,7 +52,7 @@ const Header = () => {
         alt="netflixLogo"
       />
     {user && <div className="flex w-full p-2 justify-end py-2">
-         && <div className="p-2">
+          <div className="p-2">
           <img
             className="w-11 h-11"
             alt="userIcon"

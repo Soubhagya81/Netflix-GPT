@@ -13,8 +13,7 @@ const useNowPlayingMovies = () => {
     );
 
     const movieList = await data.json();
-    dispatch(addNowPlayingMovies(movieList));
-    console.log(movieList);
+    dispatch(addNowPlayingMovies(movieList.results));
   };
 
   useEffect(() => {
