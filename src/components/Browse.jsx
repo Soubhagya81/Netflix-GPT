@@ -10,7 +10,7 @@ const Browse = () => {
   useMovieCardList()
 
   return (
-    <div>
+    <div className='flex'>
   <Header></Header>
   <MainContainer/>
   <SecondaryContainer/>
